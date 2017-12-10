@@ -9,18 +9,18 @@ app.use(express.static(__dirname + '/assets'));
 app.set('view engine', 'ejs');
 
 
-app.get('/', function(req, res) {
+app.get('/', (req, res)=> {
     res.render('page/beranda');
 });
-app.get('/profil', function(req, res) {
+app.get('/profil', (req, res)=> {
     res.render('page/profil');
 });
-app.get('/contect', function(req, res) {
+app.get('/contect', (req, res)=> {
     res.render('page/contect');
 });
 app.use('*',(req,res)=>{
 	res.render('page/note_found');
 });
-server.listen(port, function () {
+server.listen(port,  ()=> {
   console.log('Server listening at port %d', port);
 });
